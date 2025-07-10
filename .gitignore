@@ -1,0 +1,55 @@
+# Ignore backups
+*~
+
+# Ignore select directories
+__pycache__/
+.ipynb_checkpoints/
+tmp_dir/
+.tox/
+htmlcov/
+dist/
+*_backup_*
+_wheels_for_env_setup/
+data/potential_slice_generator_output/
+
+# Ignore select files
+.python-version
+sandbox.ipynb
+scratch_param.txt
+.coverage
+notes.rst
+
+# Ignore .pyc files
+*.pyc
+
+# Ignore #*# files
+\#*#
+*.bak
+
+# Ignore pip install build files.
+build/
+*.egg-info/
+*/_version.py
+
+# Ignore SLURM output files.
+slurm-*.out
+
+# Ignore JSON files.
+*.json
+!data/sim_param_generator_output/multislice_stem_sim_params.json
+
+# Ignore .tar files.
+*.tar
+
+# Ignore .xyz files.
+*.xyz
+!data/atomic_coords.xyz
+
+# Ignore .h5 data files.
+*.h5
+
+# Ignore temporary files.
+_temp_*
+
+# Ignore legacy files.
+*_legacy.py

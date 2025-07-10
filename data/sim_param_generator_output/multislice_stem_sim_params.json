@@ -1,0 +1,138 @@
+{
+    "stem_system_model_params": {
+        "sample_specification": {
+            "atomic_coords_filename": "./data/atomic_coords.xyz",
+            "unit_cell_tiling": [
+                1,
+                1,
+                1
+            ],
+            "discretization_params": {
+                "z_supersampling": 16,
+                "sample_supercell_reduced_xy_dims_in_pixels": [
+                    32,
+                    32
+                ],
+                "interpolation_factors": [
+                    1,
+                    1
+                ],
+                "num_slices": 16
+            },
+            "atomic_potential_extent": 3.0,
+            "thermal_params": {
+                "enable_thermal_effects": true,
+                "num_frozen_phonon_configs_per_subset": 5,
+                "num_subsets": 2,
+                "rng_seed": 555
+            }
+        },
+        "probe_model_params": {
+            "lens_model_params": {
+                "coherent_aberrations": [
+                    {
+                        "m": 2,
+                        "n": 0,
+                        "C_mag": -146316.0570103753,
+                        "C_ang": 0.0
+                    },
+                    {
+                        "m": 4,
+                        "n": 0,
+                        "C_mag": 1463160570.1037533,
+                        "C_ang": 0.0
+                    }
+                ],
+                "chromatic_aberration_coef": 8.0,
+                "mean_current": 50.0,
+                "std_dev_current": 0.0
+            },
+            "gun_model_params": {
+                "mean_beam_energy": 20.0,
+                "intrinsic_energy_spread": 0.0006,
+                "accel_voltage_spread": 0.0
+            },
+            "convergence_semiangle": 4.5,
+            "defocal_offset_supersampling": 3
+        },
+        "specimen_tilt": [
+            0.0,
+            0.0
+        ],
+        "scan_config": {
+            "step_size": [
+                5.0,
+                5.0
+            ],
+            "window": [
+                0.25,
+                0.75,
+                0.25,
+                0.75
+            ],
+            "jitter": 0.25,
+            "rng_seed": 5555
+        }
+    },
+    "output_params": {
+        "base_params": {
+            "output_dirname": "./data/multislice_stem_sim_output",
+            "max_data_size": 5000000000,
+            "cbed_params": {
+                "postprocessing_seq": [
+                    {
+                        "center": [
+                            0.0,
+                            0.0
+                        ],
+                        "window_dims": [
+                            32,
+                            32
+                        ],
+                        "pad_mode": "zeros",
+                        "apply_symmetric_mask": true,
+                        "title": null
+                    },
+                    {
+                        "block_dims": [
+                            2,
+                            2
+                        ],
+                        "padding_const": 0.0,
+                        "downsample_mode": "mean",
+                        "title": null
+                    }
+                ],
+                "avg_num_electrons_per_postprocessed_dp": 500000.0,
+                "apply_shot_noise": true,
+                "save_wavefunctions": true,
+                "save_final_intensity": true
+            },
+            "radial_step_size_for_3d_stem": 1.0,
+            "radial_range_for_2d_stem": [
+                0.0,
+                4.5
+            ],
+            "save_com": true,
+            "save_potential_slices": false
+        },
+        "alg_specific_params": {
+            "num_slices_per_output": 4,
+            "z_start_output": 0.0
+        }
+    },
+    "worker_params": {
+        "cpu_params": {
+            "enable_workers": true,
+            "num_worker_threads": 32,
+            "batch_size": 1,
+            "early_stop_count": 100
+        },
+        "gpu_params": {
+            "num_gpus": 4,
+            "batch_size": 1,
+            "data_transfer_mode": "auto",
+            "num_streams_per_gpu": 3
+        }
+    }
+}
