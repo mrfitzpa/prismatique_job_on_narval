@@ -37,6 +37,10 @@ mkdir -p ${path_to_dir_containing_current_script}/_wheels_for_env_setup
 # Change into the aforementioned directory.
 cd ${path_to_dir_containing_current_script}/_wheels_for_env_setup
 
+# Load some DRAC software modules.
+module load StdEnv/2023
+module load python/3.11
+
 # Download the wheels.
 pip download --no-deps czekitout
 pip download --no-deps fancytypes

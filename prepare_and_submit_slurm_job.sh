@@ -32,8 +32,10 @@
 #SBATCH --cpus-per-task=2              # CPU cores/threads
 #SBATCH --gpus-per-node=a100_1g.5gb:1  # GPU type and number of GPUs per node.
 #SBATCH --mem=15G                      # CPU memory per node
-#SBATCH --time=00-02:59                # time (DD-HH:MM)
+#SBATCH --time=00-00:59                # time (DD-HH:MM)
 #SBATCH --mail-type=ALL
+
+
 
 # Setup the Python virtual environment used to execute the Python script. Note
 # that the environment will be created at
